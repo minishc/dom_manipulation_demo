@@ -4,20 +4,17 @@ function moveImage(direction) {
     let topVal = parseInt(imgObjStyle.top, 10);
     let leftVal = parseInt(imgObjStyle.left, 10);
 
-    if(direction === 'KeyA') {
+    if(direction === "left") {
         imgObjStyle.left = (leftVal - 30) + "px";
-    } 
-
-    if(direction === 'KeyW') {
+        console.log("moving left")
+    } else if(direction === "up") {
+        console.log("moving right")
         imgObjStyle.top = (topVal - 30) + "px";
-    }
-
-    if(direction === 'KeyD') {        
+    } else if(direction === "right") {
+        console.log("moving right")
         imgObjStyle.left = (leftVal + 30) + "px";
-    }
-
-    
-    if(direction === 'KeyS') {
+    } else if(direction === "down") {
+        console.log("moving down")
         imgObjStyle.top = (topVal + 30) + "px";
     }
 }
@@ -29,8 +26,10 @@ function init() {
     imgObj.style.position = 'relative';
     imgObj.style.left = '0px';
     imgObj.style.top = '0px';
+    imgObj.style.top = '0px';
     // alter imgObj
-
+    moveImage('right');
+    moveImage("right")
 }
 
 
