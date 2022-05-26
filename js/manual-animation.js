@@ -1,22 +1,3 @@
-const buttons = document.querySelectorAll("button");
-for(var i=0; i<buttons.length;i++) {
-    let currentButton = buttons[i];
-    currentButton.addEventListener('mouseenter', () => changeToCoral(event.target));
-    currentButton.addEventListener('mouseleave', () => backToNormal(event.target));
-    currentButton.addEventListener('click', ()=> moveImage(event.target.id))
-}
-
-function changeToCoral(eventTarget) {
-    eventTarget.style.backgroundColor = "coral";
-}
-
-function changeToWhite() {
-    eventTarget.style.backgroundColor = "white";
-}
-
-function backToNormal(eventTarget) {
-    eventTarget.style.backgroundColor='';
-}
 
 function moveImage(direction) {
     let imgObjStyle = imgObj.style;
@@ -42,10 +23,14 @@ function moveImage(direction) {
 }
 
 function init() {
+    // select the image from the DOM
     imgObj = document.getElementById('myImage');
+    // alter CSS style properties
     imgObj.style.position = 'relative';
     imgObj.style.left = '0px';
     imgObj.style.top = '0px';
+    // alter imgObj
+
 }
 
 
