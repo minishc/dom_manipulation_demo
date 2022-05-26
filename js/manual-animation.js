@@ -30,22 +30,28 @@ function init() {
     moveImage('right');
 }
 
+//retrieving the container for the buttons
 var container = document.getElementsByClassName('button-container');
 
+//registering an event listener to activate on key presses
 container[0].addEventListener('keypress', function(event) {
     const key = event.key;
-    if(key == "w") {
+    if(key == "w") { //if w is pressed move up
         moveImage('up');
     }
-    else if(key == "a") {
+    else if(key == "a") { //if a is pressed move left
         moveImage('left');
     }
-    else if(key == "d") {
+    else if(key == "d") { //if d is pressed move right
         moveImage('right');
     }
-    else if(key == "s") {
+    else if(key == "s") { //if s is pressed move down
         moveImage('down');
     }
 });
+
+var newElement = document.createElement('button');
+newElement.innerHTML = '<button id="KeyX" onclick="init()">Reset the position</button>';
+document.getElementsByTagName('button')[3].insertAdjacentElement("afterend", newElement);
 
 window.onload = init;
