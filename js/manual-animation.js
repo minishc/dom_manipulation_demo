@@ -26,8 +26,6 @@ function init() {
     imgObj.style.position = 'relative';
     imgObj.style.left = '0px';
     imgObj.style.top = '0px';
-    // alter imgObj
-    moveImage('right');
 }
 
 //retrieving the container for the buttons
@@ -51,7 +49,9 @@ container[0].addEventListener('keypress', function(event) {
 });
 
 var newElement = document.createElement('button');
-newElement.innerHTML = '<button id="KeyX" onclick="init()">Reset the position</button>';
+newElement.id = "Reset";
+newElement.onclick = init;
+newElement.textContent = "Reset the Position";
 document.getElementsByTagName('button')[3].insertAdjacentElement("afterend", newElement);
 
 window.onload = init;
