@@ -19,6 +19,19 @@ function moveImage(direction) {
     }
 }
 
+function rotateImage(direction) {
+    if(direction === "right") {
+        rotation += 30;
+        rotation %= 360;
+        document.getElementById("myImage").style.transform = "rotate("+rotation+"deg)";
+    }
+    else if(direction === "left") {
+        rotation -= 30;
+        rotation %= 360;
+        document.getElementById("myImage").style.transform = "rotate("+rotation+"deg)";
+    }
+}
+
 function init() {
     // select the image from the DOM
     imgObj = document.getElementById('myImage');
@@ -26,13 +39,15 @@ function init() {
     imgObj.style.position = 'relative';
     imgObj.style.left = '0px';
     imgObj.style.top = '0px';
+    imgObj.style.transform = "initial";
+    imgObj.style.zIndex = "-1";
 }
 
 //retrieving the container for the buttons
 var container = document.getElementsByClassName('button-container');
 
 //registering an event listener to activate on key presses
-container[0].addEventListener('keypress', function(event) {
+window.addEventListener('keypress', function(event) {
     const key = event.key;
     if(key == "w") { //if w is pressed move up
         moveImage('up');
@@ -46,8 +61,18 @@ container[0].addEventListener('keypress', function(event) {
     else if(key == "s") { //if s is pressed move down
         moveImage('down');
     }
+    else if(key == "r") {
+        init();
+    }
+    else if(key == "e") {
+        rotateImage("right");
+    }
+    else if(key == "q") {
+        rotateImage("left");
+    }
 });
 
+var rotation = 0;
 var newElement = document.createElement('button');
 newElement.id = "Reset";
 newElement.onclick = init;
