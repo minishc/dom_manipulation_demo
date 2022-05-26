@@ -1,9 +1,9 @@
 # JavaScript Day 4 Exercises
 
-* **Purpose** - To gain familiarity the following features:
-  * event-handlers
-  * automated animations
-* **Description** - Complete the exercises from today's lecture presentation. The exercises begin on [slide 47](https://docs.google.com/presentation/d/e/2PACX-1vQFm_z-Q8li6n73yTpSE0DMZFCxMuVMX7TZveEaBz4XZZDwy6UXIqHsLF4XwnhmDw/pub?start=false&loop=false&delayms=3000#slide=id.p47).
+* **Purpose** - To gain familiarity the following features of JavaScript:
+  * Write functions that select and manipulate the DOM
+  * Applying Event Listeners
+* **Description** - A simple html file with an image and buttons. Branches have additional Javascript to move the image via DOM manipulation in response to event listeners 
 
 
 
@@ -27,9 +27,16 @@
   * clone the project by executing the following command:
     * `git clone https://github.com/${MYUSERNAME}/${NAMEOFPROJECT}`
 
-
-
-
+#### Part 4 - Setting upstream remote
+* Link the local repository just created with the original you forked from
+    * If new content is added to this repository, you can pull the new changes, but the remote 'origin' points to your forked version
+    * Add another remote and call it 'upstream':
+        * `git remote add upstream https://github.com/Java-Full-Stack-TEK/javascript_day-2-exercises`
+* To fetch or pull changes, we tell git to look at the Github upstream remote (pointing here) instead of the origin remote (which points to your fork):
+    * For git to try and merge changes, we use git pull <remote> <branch>:
+        * `git pull upstream master`
+    * In case there of a merge conflict, we can update all remote branches, but save merging for later using git fetch <remote>:
+        * `git fetch upstream`
 
 
 ## How to Submit
@@ -48,3 +55,14 @@
 * from the browser, navigate to the _forked_ project from **your** github account.
 * click the `Pull Requests` tab.
 * select "New Pull Request"
+
+#### Part 4 - Setting upstream remote
+* Link the local repository just created with the original you forked from
+    * If new content is added to this repository, you can pull the new changes, but the remote 'origin' points to your forked version
+    * Add another remote and call it 'upstream':
+        * `git remote add upstream https://github.com/Java-Full-Stack-TEK/javascript_day-2-exercises`
+* To fetch or pull changes, we tell git to look at the Github upstream remote (pointing here) instead of the origin remote (which points to your fork):
+    * For git to try and merge changes, we use git pull <remote> <branch>:
+        * `git pull upstream master`
+    * In case there of a merge conflict, we can update all remote branches, but save merging for later using git fetch <remote>:
+        * `git fetch upstream`
