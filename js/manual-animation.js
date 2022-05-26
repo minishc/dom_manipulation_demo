@@ -5,16 +5,16 @@ function moveImage(direction) {
     let leftVal = parseInt(imgObjStyle.left, 10);
 
     if(direction === "left") {
+        // console.log("moving left");
         imgObjStyle.left = (leftVal - 30) + "px";
-        console.log("moving left")
     } else if(direction === "up") {
-        console.log("moving right")
+        // console.log("moving up");
         imgObjStyle.top = (topVal - 30) + "px";
     } else if(direction === "right") {
-        console.log("moving right")
+        // console.log("moving right");
         imgObjStyle.left = (leftVal + 30) + "px";
     } else if(direction === "down") {
-        console.log("moving down")
+        // console.log("moving down");
         imgObjStyle.top = (topVal + 30) + "px";
     }
 }
@@ -26,11 +26,26 @@ function init() {
     imgObj.style.position = 'relative';
     imgObj.style.left = '0px';
     imgObj.style.top = '0px';
-    imgObj.style.top = '0px';
     // alter imgObj
     moveImage('right');
-    moveImage("right")
 }
 
+var container = document.getElementsByClassName('button-container');
+
+container[0].addEventListener('keypress', function(event) {
+    const key = event.key;
+    if(key == "w") {
+        moveImage('up');
+    }
+    else if(key == "a") {
+        moveImage('left');
+    }
+    else if(key == "d") {
+        moveImage('right');
+    }
+    else if(key == "s") {
+        moveImage('down');
+    }
+});
 
 window.onload = init;

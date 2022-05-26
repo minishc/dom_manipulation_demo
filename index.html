@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
+  <title>DOM Manipulation</title>
 
   <link href="./css/style.css" rel="stylesheet">
   <!-- <script type="text/javascript" src="./js/header-functions.js"></script> -->
@@ -39,10 +40,10 @@
   <!-- body begins here -->
   <img id="myImage" src="./img/ship.png" height="100px" width="100px">
   <div class="button-container" style="text-align:center; width:480px;">
-    <button id="KeyW">Up</button><br><br>
-    <button id="KeyA">Left</button>
-    <button id="KeyD">Right</button><br><br>
-    <button id="KeyS">Down</button>
+    <button id="KeyW" onclick="moveImage('up')">Up</button><br><br>
+    <button id="KeyA" onclick="moveImage('left')">Left</button>
+    <button id="KeyD" onclick="moveImage('right')">Right</button><br><br>
+    <button id="KeyS" onclick="moveImage('down')">Down</button>
   </div>
 
 
