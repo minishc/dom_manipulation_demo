@@ -19,10 +19,11 @@
 * Copy the URL of the project to the clipboard.
 
 #### Part 3 - Cloning _forked_ repository
-* Clone the repository from **your account** into the `~/dev` directory.
-  * if you do not have a `~/dev` directory, make one by executing the following command:
-    * `mkdir ~/dev`
-  * navigate to the `~/dev` directory by executing the following command:
+* Clone the repository from **your account** into the `~/dev` directory (or whatever the parent directory of your repositories is).
+  * Make sure your parent directory is NOT a git repository by running
+    * `git status`
+    * You should see `fatal: not a git repository (or any of the parent directories)`
+  * navigate to the `~/dev` parent directory by executing the following command:
     * `cd ~/dev`
   * clone the project by executing the following command:
     * `git clone https://github.com/${MYUSERNAME}/${NAMEOFPROJECT}`
