@@ -27,6 +27,7 @@ button {
 }
 
 button:hover {
+    border: 1px solid #339933;
     background-color: rgb(185, 195, 194);
 }
 
